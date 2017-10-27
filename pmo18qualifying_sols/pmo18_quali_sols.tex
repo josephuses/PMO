@@ -36,7 +36,7 @@
 		\pgfmathparse{1-(#1/\pgf@decorate@totalpathlength)}\tikzset{pos=\pgfmathresult}}
 }
 
-\title{Solutions to Part II of 18th PMO (Qualifying Stage)}
+\title{Solutions to Part II and III of 18th PMO (Qualifying Stage)}
 \author{Joseph S. Tabadero, Jr.}
 \date{\today}
 
@@ -144,6 +144,41 @@
 		\end{equation}
 		Therefore, the sum is $300\times 1+ 500\times 2+700\times3 + 416\times 4=5064$.
 	\end{solution}
+	\end{enumerate}
+
+\section*{Part III}
+
+	\begin{enumerate}
+		\item In the right triangle $ABC$ where $m\angle B = 90^\circ$, $BC : AB = 1 : 2$. Construct the median $BD$
+		and let point $E$ be on $BD$ such that $CE \perp BD$. Determine $BE : ED$.
+		
+		\begin{solution}
+			Reflect triangle $ABC$ through $AC$ to construct the rectangle $ABCG$. It's easy to see that $\triangle BDC$ is an isosceles triangle, so that $m\angle DBC = m\angle DCB$. Since $CE\perp BD$, and $m\angle ECB=90-m\angle ECB=m\angle DCB=m\angle CAB$, we now have $\triangle BEC\sim \triangle CBA$. We therefore have $BE:CB=CB:AC$, that is $BE:1=1:\sqrt{5}$ or $BE=\frac{1}{\sqrt{5}}$. Now, $BD=CD=\frac{\sqrt{5}}{2}$, and $DE=\frac{\sqrt{5}}{2}-\frac{1}{\sqrt{5}}$. Therefore, $BD:ED=2:3$.
+			
+			\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
+			\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
+			\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+			\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+			\clip(-0.28584910525056706,-1.0878882954829672) rectangle (4.625201315502808,2.584797079622746);
+			\draw (0.,0.)-- (4.,0.);
+			\draw (4.,0.)-- (4.,2.);
+			\draw (4.,2.)-- (0.,0.);
+			\draw (4.,0.)-- (2.,1.);
+			\draw (4.,2.)-- (3.2,0.4);
+			\draw [dash pattern=on 1pt off 1pt,domain=-0.28584910525056706:4.625201315502808] plot(\x,{(--4.8-1.6*\x)/-0.8});
+			\draw [dashed] (0,0) -- (0,2) -- (4,2);
+			\draw [dashed] (0,2) -- (2,1);
+			\begin{scriptsize}
+			\node [above left] at (0,2) {$G$};
+			\draw [fill=uuuuuu] (0.,0.) circle (2.0pt) node [below left] {$A$};;
+			\draw [fill=xdxdff] (4.,0.) circle (2.5pt) node[below right] {$B$};
+			\draw [fill=ududff] (4.,2.) circle (2.5pt) node [above right] {$C$};
+			\draw [fill=uuuuuu] (2.,1.) circle (2.0pt) node [above] {$D$};
+			\draw [fill=uuuuuu] (3.2,0.4) circle (2.0pt) node [above] {$E$};
+			\draw [fill=uuuuuu] (3.,0.) circle (2.0pt) node [below right] {$F$};
+			\end{scriptsize}
+			\end{tikzpicture}
+		\end{solution}
 	\end{enumerate}
 	
 	
